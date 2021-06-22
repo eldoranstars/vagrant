@@ -7,7 +7,7 @@ sudo yum update -y
 sudo yum install java-1.7.0-openjdk.x86_64 -y 
 sudo yum install tomcat -y
 sudo yum install tomcat-webapps tomcat-admin-webapps -y
-sudo sed -i '43a\  <user username="admin" password="admin" roles="admin-gui,manager-gui"/>"' /etc/tomcat/tomcat-users.xml
+sudo sed -i '43a\  <user username="admin" password="admin" roles="admin-gui,manager-gui"/>' /etc/tomcat/tomcat-users.xml
 sudo sed -i '71a\               address="192.168.2.76"' /etc/tomcat/server.xml
 sudo chkconfig tomcat on
 sudo service tomcat start
