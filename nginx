@@ -1,17 +1,14 @@
 #/bin/bash
 sudo chmod o+w -R /var/cache/yum/x86_64/6
 echo "http://vault.centos.org/6.8/os/x86_64/" > /var/cache/yum/x86_64/6/base/mirrorlist.txt
-echo "http://vault.centos.org/6.8/extras/x86_64/" > /var/cache/yum/x86_64/6/extras/mirrorlist.txt
-echo "http://vault.centos.org/6.8/updates/x86_64/" > /var/cache/yum/x86_64/6/updates/mirrorlist.txt
 sudo yum update -y
 sudo yum install nginx -y 
 sudo chmod o+w -R /etc/nginx/conf.d
 sudo cat /etc/nginx/conf.d/default.conf > /etc/nginx/conf.d/newdefault.conf
 sudo sed -i 's/listen       80 default_server;/listen       8080;/' /etc/nginx/conf.d/newdefault.conf
-sudo sed -i '14a\        proxy_pass http://192.168.1.66:8080;' /etc/nginx/conf.d/newdefault.conf
+sudo sed -i '14a\        proxy_pass http://192.168.2.76:8080;' /etc/nginx/conf.d/newdefault.conf
 sudo sed -i '17,25d' /etc/nginx/conf.d/newdefault.conf
-sudo sed -i '9,13d' /etc/nginx/conf.d/newdefault.conf
-sudo sed -i '7d' /etc/nginx/conf.d/newdefault.conf
+sudo sed -i '7,13d' /etc/nginx/conf.d/newdefault.conf
 sudo sed -i '1,4d' /etc/nginx/conf.d/newdefault.conf
 sudo cat /etc/nginx/conf.d/newdefault.conf >> /etc/nginx/conf.d/default.conf
 sudo chkconfig nginx on
