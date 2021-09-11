@@ -28,21 +28,21 @@ Vagrant.configure("2") do |config|
   # end
   
    config.vm.define "centos_first" do |centos_first|
-    centos_first.vm.box = "sbeliakou/centos"
+    centos_first.vm.box = "centos/7"
     centos_first.vm.network "public_network", ip: "192.168.1.67"
     centos_first.vm.provider "virtualbox" do |vb|
-    	vb.memory = "2048"
-	vb.cpus = "1"
+    	vb.memory = "4096"
+	vb.cpus = "2"
 	vb.name = "centos_first"
     end 
   end
   
    config.vm.define "centos_second" do |centos_second|
-    centos_second.vm.box = "sbeliakou/centos"
+    centos_second.vm.box = "centos/7"
     centos_second.vm.network "public_network", ip: "192.168.1.68"
     centos_second.vm.provider "virtualbox" do |vb|
-    	vb.memory = "2048"
-	vb.cpus = "1"
+    	vb.memory = "4096"
+	vb.cpus = "2"
 	vb.name = "centos_second"
     end 
   end
