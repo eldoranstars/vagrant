@@ -30,6 +30,7 @@ Vagrant.configure("2") do |config|
    config.vm.define "centos_first" do |centos_first|
     centos_first.vm.box = "centos/7"
     centos_first.vm.network "public_network", ip: "192.168.1.67"
+    centos_first.vm.provision "shell", path: "https://raw.githubusercontent.com/eldoranstars/vagrant/main/k8s"
     centos_first.vm.provider "virtualbox" do |vb|
     	vb.memory = "4096"
 	vb.cpus = "2"
