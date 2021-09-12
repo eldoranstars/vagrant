@@ -29,9 +29,10 @@ Vagrant.configure("2") do |config|
   
    config.vm.define "centos_first" do |centos_first|
     centos_first.vm.box = "centos/7"
+    centos_first.vm.hostname "centos_first"
     centos_first.vm.network "public_network", ip: "192.168.1.67"
-    centos_first.vm.provision "shell", path: "https://raw.githubusercontent.com/eldoranstars/vagrant/main/k8s"
     centos_first.vm.synced_folder ".", "/vagrant", disabled: true
+    centos_first.vm.provision "shell", path: "https://raw.githubusercontent.com/eldoranstars/vagrant/main/k8s"
     centos_first.vm.provider "virtualbox" do |vb|
     	vb.memory = "4096"
 	vb.cpus = "2"
@@ -41,9 +42,10 @@ Vagrant.configure("2") do |config|
   
    config.vm.define "centos_second" do |centos_second|
     centos_second.vm.box = "centos/7"
+    centos_second.vm.hostname "centos_second"
     centos_second.vm.network "public_network", ip: "192.168.1.68"
-    centos_second.vm.provision "shell", path: "https://raw.githubusercontent.com/eldoranstars/vagrant/main/k8s"
     centos_second.vm.synced_folder ".", "/vagrant", disabled: true
+    centos_second.vm.provision "shell", path: "https://raw.githubusercontent.com/eldoranstars/vagrant/main/k8s"
     centos_second.vm.provider "virtualbox" do |vb|
     	vb.memory = "4096"
 	vb.cpus = "2"
