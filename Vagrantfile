@@ -31,6 +31,7 @@ Vagrant.configure("2") do |config|
     master.vm.box = "centos/7"
     master.vm.hostname = "master"
     master.vm.network "public_network", ip: "192.168.1.67"
+    master.vm.synced_folder "Share/", "/Share"
     master.vm.synced_folder ".", "/vagrant", disabled: true
     master.vm.provision "shell", path: "https://raw.githubusercontent.com/eldoranstars/vagrant/main/k8s"
     master.vm.provider "virtualbox" do |vb|
@@ -44,6 +45,7 @@ Vagrant.configure("2") do |config|
     worker.vm.box = "centos/7"
     worker.vm.hostname = "worker"
     worker.vm.network "public_network", ip: "192.168.1.68"
+    worker.vm.synced_folder "Share/", "/Share"
     worker.vm.synced_folder ".", "/vagrant", disabled: true
     worker.vm.provision "shell", path: "https://raw.githubusercontent.com/eldoranstars/vagrant/main/k8s"
     worker.vm.provider "virtualbox" do |vb|
