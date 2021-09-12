@@ -1,7 +1,13 @@
 #/bin/bash
 sudo yum install yum-utils -y
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-sudo yum install docker-ce docker-ce-cli containerd.io -y
+sudo yum install docker -y
 sudo systemctl start docker
+sudo systemctl enable docker
 sudo curl https://raw.githubusercontent.com/eldoranstars/vagrant/main/Share/kubernetes.repo --output /etc/yum.repos.d/kubernetes.repo
-sudo yum install kubectl -y
+sudo yum install kubernetes -y
+#sudo systemctl enable docker.service
+#sudo systemctl enable kubelet.service
+#mkdir -p $HOME/.kube
+#chown vagrant:vagrant .kube/config
+#sudo chown $(id -u):$(id -g) $HOME/.kube/config
