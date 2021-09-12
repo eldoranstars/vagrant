@@ -2,10 +2,11 @@
 sudo yum install yum-utils -y
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo yum install docker-ce docker-ce-cli containerd.io -y
-sudo cp Share/daemon.json /etc/docker/daemon.json
-sudo systemctl start docker
+sudo cp /Share/daemon.json /etc/docker/daemon.json
+sudo cp /Share/kubernetes.repo /etc/yum.repos.d/kubernetes.repo
 sudo systemctl enable docker
-sudo cp Share/kubernetes.repo /etc/yum.repos.d/kubernetes.repo
+sudo systemctl daemon-reload
+sudo systemctl start docker
 # Set SELinux in permissive mode (effectively disabling it)
 # sudo setenforce 0
 # sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
