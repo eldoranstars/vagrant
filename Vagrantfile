@@ -42,7 +42,7 @@ Vagrant.configure("2") do |config|
    config.vm.define "centos_second" do |centos_second|
     centos_second.vm.box = "centos/7"
     centos_second.vm.network "public_network", ip: "192.168.1.68"
-    centos_first.vm.provision "shell", path: "https://raw.githubusercontent.com/eldoranstars/vagrant/main/k8s"
+    centos_second.vm.provision "shell", path: "https://raw.githubusercontent.com/eldoranstars/vagrant/main/k8s"
     centos_second.vm.synced_folder ".", "/vagrant", disabled: true
     centos_second.vm.provider "virtualbox" do |vb|
     	vb.memory = "4096"
