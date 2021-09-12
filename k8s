@@ -5,8 +5,7 @@ sudo yum install docker -y
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo curl https://raw.githubusercontent.com/eldoranstars/vagrant/main/Share/kubernetes.repo --output /etc/yum.repos.d/kubernetes.repo
-sudo yum install kubernetes -y
-#sudo systemctl enable docker.service
+#sudo yum install kubernetes -y
 #sudo systemctl enable kubelet.service
 #mkdir -p $HOME/.kube
 #chown vagrant:vagrant .kube/config
