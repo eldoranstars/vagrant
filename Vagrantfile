@@ -1,5 +1,4 @@
 Vagrant.configure("2") do |config|
-  config.vm.provision "shell", inline: "echo Hello"
 
   # config.vm.define "nginx" do |nginx|
     # nginx.vm.box = "sbeliakou/centos-6.8-x86_64"
