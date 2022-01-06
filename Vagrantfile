@@ -8,8 +8,8 @@ Vagrant.configure("2") do |config|
     # nginx.vm.provision "shell", path: "https://raw.githubusercontent.com/eldoranstars/vagrant/main/nginx"
     # nginx.vm.provider "virtualbox" do |vb|
     	# vb.memory = "2048"
-	# vb.cpus = "1"
-	# vb.name = "nginx"
+    	# vb.cpus = "1"
+    	# vb.name = "nginx"
     # end 
   # end
 
@@ -21,8 +21,8 @@ Vagrant.configure("2") do |config|
     # tomcat.vm.provision "shell", path: "https://raw.githubusercontent.com/eldoranstars/vagrant/main/tomcat"
     # tomcat.vm.provider "virtualbox" do |vb|
     	# vb.memory = "4096"
-	# vb.cpus = "1"
-	# vb.name = "tomcat"
+	    # vb.cpus = "1"
+	    # vb.name = "tomcat"
     # end 
   # end
   
@@ -34,8 +34,8 @@ Vagrant.configure("2") do |config|
     master.vm.provision "shell", path: "k8s"
     master.vm.provider "virtualbox" do |vb|
     	vb.memory = "4096"
-	vb.cpus = "2"
-	vb.name = "master"
+	    vb.cpus = "2"
+	    vb.name = "master"
     end 
   end
   
@@ -47,8 +47,8 @@ Vagrant.configure("2") do |config|
     worker.vm.provision "shell", path: "k8s"
     worker.vm.provider "virtualbox" do |vb|
     	vb.memory = "4096"
-	vb.cpus = "2"
-	vb.name = "worker"
+	    vb.cpus = "2"
+	    vb.name = "worker"
     end 
   end
 
