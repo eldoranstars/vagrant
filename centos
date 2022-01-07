@@ -1,0 +1,3 @@
+#/bin/bash
+sudo yum install bash-completion bash-completion-extras -y
+source /etc/profile.d/bash_completion.sh

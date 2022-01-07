@@ -1,0 +1,7 @@
+#/bin/bash
+sudo yum install curl which –y
+sudo yum install java-11-openjdk-devel -y
+# Устанавливаем открытый ключ платформы Confluent. Этот ключ используется для подписи пакетов в репозитории YUM:
+rpm --import https://packages.confluent.io/rpm/6.0/archive.key
+# Создаем файл confluent.repo в директоhии /etc/yum.repos.d/. 
+sudo cp /Share/default.conf /etc/yum.repos.d/confluent.repo
