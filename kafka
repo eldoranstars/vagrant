@@ -1,7 +1,14 @@
 #/bin/bash
-sudo yum install curl which –y
-sudo yum install java-11-openjdk-devel -y
-# Устанавливаем открытый ключ платформы Confluent. Этот ключ используется для подписи пакетов в репозитории YUM:
-rpm --import https://packages.confluent.io/rpm/6.0/archive.key
-# Создаем файл confluent.repo в директоhии /etc/yum.repos.d/. 
-sudo cp /Share/default.conf /etc/yum.repos.d/confluent.repo
+sudo yum update -y
+sudo yum install wget net-tools netcat nc -y
+sudo yum install java-1.8.0-openjdk -y
+# Для нормальной производительности узла кластера необходимо подкорректировать настройки свопирования памяти. 
+sudo sysctl vm.swappiness=1
+# Для сохранения настроек при перезагрузке добавим строчку в файл конфигурации 
+echo 'vm.swappiness=1' | sudo tee --append /etc/sysctl.conf
+# Устанавливаем лимиты файлов для дескрипторов файлов 100.000
+echo "* hard nofile 100000 * soft nofile 100000" | sudo tee --append /etc/security/limits.conf
+# Disable SELinux
+sudo setenforce 0
+sudo sed -i 's/SELINUX=enabled/SELINUX=disabled/g' /etc/selinux/config
+sudo reboot now
