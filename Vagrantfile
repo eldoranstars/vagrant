@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
     # master.vm.synced_folder ".", "/vagrant", disabled: true
     master.vm.provision "shell", path: "k8s"
     master.vm.provider "virtualbox" do |vb|
-    	vb.memory = "4096"
+    	vb.memory = "3072"
 	    vb.cpus = "2"
 	    vb.name = "master"
     end 
@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
     # worker.vm.synced_folder ".", "/vagrant", disabled: true
     worker.vm.provision "shell", path: "k8s"
     worker.vm.provider "virtualbox" do |vb|
-    	vb.memory = "4096"
+    	vb.memory = "3072"
 	    vb.cpus = "2"
 	    vb.name = "worker"
     end 

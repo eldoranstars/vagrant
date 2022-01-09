@@ -5,7 +5,7 @@ sudo systemctl enable ntpd
 sudo systemctl start ntpd
 # Set SELinux in permissive mode (effectively disabling it)
 sudo setenforce 0
-sudo sed -i 's/^SELINUX=enforcing$/SELINUX=permissive/' /etc/selinux/config
+sudo sed -i 's/SELINUX=enabled/SELINUX=disabled/d' /etc/selinux/config
 # Lastly, we need to disable SWAP to enable the kubelet to work properly
 sudo sed -i '/swap/d' /etc/fstab
 sudo swapoff -a
@@ -18,3 +18,11 @@ enabled=1
 gpgcheck=0
 repo_gpgcheck=0
 EOF
+# Prepare services
+sudo yum install kubelet kubeadm kubectl docker -y
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+sudo systemctl enable kubelet.service
+sudo systemctl start kubelet.service
+echo 'source <(kubectl completion bash)' >>~/.bashrc
+source ~/.bashrc
