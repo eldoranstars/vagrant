@@ -1,8 +1,4 @@
 #/bin/bash
-sudo yum -y update
-sudo yum -y install ntp
-sudo systemctl enable ntpd
-sudo systemctl start ntpd
 # Set SELinux in permissive mode (effectively disabling it)
 sudo setenforce 0
 sudo sed -i 's/SELINUX=enabled/SELINUX=disabled/d' /etc/selinux/config
@@ -20,9 +16,13 @@ repo_gpgcheck=0
 EOF
 # Prepare services
 sudo yum install kubelet kubeadm kubectl docker -y
-sudo systemctl enable docker.service
-sudo systemctl start docker.service
-sudo systemctl enable kubelet.service
-sudo systemctl start kubelet.service
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo systemctl enable kubelet
+sudo systemctl start kubelet
 echo 'source <(kubectl completion bash)' >>~/.bashrc
 source ~/.bashrc
+# VMCloud
+echo "# In order to set /proc/sys/net/bridge/bridge-nf-call-iptables" >> /etc/sysctl.conf
+echo "net.bridge.bridge-nf-call-iptables = 1" >> /etc/sysctl.conf
+sudo sysctl -p
