@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
     # nginx.vm.provider "virtualbox" do |vb|
       # vb.memory = "2048"
       # vb.cpus = "1"
-      # vb.name = "nginx"
+      # vb.name
     # end
   # end
 
@@ -23,7 +23,7 @@ Vagrant.configure("2") do |config|
       # vb.memory = "4096"
       # vb.cpus = "1"
       # vb.name = "tomcat"
-    # end
+    # end 
   # end
 
   config.vm.define "master" do |master|
@@ -36,7 +36,7 @@ Vagrant.configure("2") do |config|
       vb.memory = "2048"
       vb.cpus = "2"
       vb.name = "master"
-    end
+    end 
   end
 
   config.vm.define "worker" do |worker|
