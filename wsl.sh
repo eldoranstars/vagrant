@@ -2,9 +2,9 @@
 # https://github.com/ohmybash/oh-my-bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 sed -i 's/OSH_THEME="font"/OSH_THEME="powerline"/g' ~/.bashrc
-sed -i 's/_CLEAN_COLOR=25/_CLEAN_COLOR=16/g' ~/.oh-my-bash/themes/powerline/powerline.theme.sh
-sed -i 's/_DIRTY_COLOR=88/_DIRTY_COLOR=17/g' ~/.oh-my-bash/themes/powerline/powerline.theme.sh
-sed -i 's/_STAGED_COLOR=21/_STAGED_COLOR=22/g' ~/.oh-my-bash/themes/powerline/powerline.theme.sh
+sed -i 's/_CLEAN_COLOR=25/_CLEAN_COLOR=17/g' ~/.oh-my-bash/themes/powerline/powerline.theme.sh
+sed -i 's/_DIRTY_COLOR=88/_DIRTY_COLOR=16/g' ~/.oh-my-bash/themes/powerline/powerline.theme.sh
+sed -i 's/_STAGED_COLOR=30/_STAGED_COLOR=22/g' ~/.oh-my-bash/themes/powerline/powerline.theme.sh
 sed -i 's/_UNSTAGED_COLOR=92/_UNSTAGED_COLOR=1/g' ~/.oh-my-bash/themes/powerline/powerline.theme.sh
 sed -i 's/CWD_THEME_PROMPT_COLOR=240/CWD_THEME_PROMPT_COLOR=23/g' ~/.oh-my-bash/themes/powerline/powerline.theme.sh
 # https://github.com/trapd00r/LS_COLORS
