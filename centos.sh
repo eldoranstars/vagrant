@@ -6,4 +6,3 @@ sudo systemctl start ntpd
 sudo yum install git -y
 sudo yum install bash-completion bash-completion-extras -y
 source /etc/profile.d/bash_completion.sh
-1
