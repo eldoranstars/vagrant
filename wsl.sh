@@ -1,4 +1,8 @@
 #/bin/bash
+#https://docs.microsoft.com/en-us/windows/wsl/install
+wsl --install
+wsl --set-default-version 1
+wsl --set-version ubuntu 1
 # https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/FiraCode/Light/complete/Fira%20Code%20Light%20Nerd%20Font%20Complete%20Windows%20Compatible.ttf
 # https://github.com/ohmybash/oh-my-bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
