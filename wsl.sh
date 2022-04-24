@@ -27,3 +27,14 @@ echo "export LS_COLORS" >> ~/.zshrc
 
 https://docs.microsoft.com/ru-ru/windows/wsl/tutorials/wsl-git#git-credential-manager-setup
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
+
+# VPN fix 4 WSL
+cat <<EOF | sudo tee /etc/wsl.conf
+[network]
+generateResolvConf = false
+EOF
+cat <<EOF | sudo tee /run/resolvconf/resolv.conf
+nameserver 8.8.8.8 # replace to company DNS
+nameserver 8.8.4.4 # replace to company DNS
+nameserver 192.168.1.1
+EOF
