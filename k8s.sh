@@ -21,7 +21,9 @@ sudo systemctl start docker
 sudo systemctl enable kubelet
 sudo systemctl start kubelet
 echo 'source <(kubectl completion bash)' >>~/.bashrc
-source ~/.bashrc
+echo 'source <(oc completion bash)' >>~/.bashrc
+echo 'source <(kubectl completion zsh)' >>~/.zshrc
+echo 'source <(oc completion zsh | sed -e 's/compdef _kubectl kubectl/compdef _oc oc/' )'  >>~/.bashrc
 # VMCloud
 echo "# In order to set /proc/sys/net/bridge/bridge-nf-call-iptables" >> /etc/sysctl.conf
 echo "net.bridge.bridge-nf-call-iptables = 1" >> /etc/sysctl.conf
