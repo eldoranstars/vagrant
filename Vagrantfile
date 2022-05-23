@@ -57,7 +57,7 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.hostname = "ubuntu"
     ubuntu.vm.network "public_network", ip: "192.168.1.69"
     # ubuntu.vm.synced_folder ".", "/vagrant", disabled: true
-    ubuntu.vm.provision "shell", path: "ubuntuюыр"
+    ubuntu.vm.provision "shell", path: "ubuntu.sh"
     ubuntu.vm.provider "virtualbox" do |vb|
       vb.memory = "4096"
       vb.cpus = "1"
