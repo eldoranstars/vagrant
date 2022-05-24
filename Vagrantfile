@@ -56,9 +56,12 @@ Vagrant.configure("2") do |config|
   config.vm.define "ubuntu" do |ubuntu|
     ubuntu.vm.box = "ubuntu/bionic64"
     ubuntu.vm.hostname = "ubuntu"
-    ubuntu.vm.network "public_network", ip: "192.168.1.69", bridge: "Intel(R) Ethernet Connection (12) I219-V"
-    # ubuntu.vm.synced_folder ".", "/vagrant", disabled: true
-    ubuntu.vm.provision "shell", path: "ubuntu.sh"
+    ubuntu.vm.network "public_network", bridge: [
+      "Intel(R) Ethernet Connection (12) I219-V",
+      "Realtek Gaming GbE Family Controller",
+    ]
+    ubuntu.vm.synced_folder ".", "/vagrant", disabled: true
+    # ubuntu.vm.provision "shell", path: "ubuntu.sh"
     ubuntu.vm.provider "virtualbox" do |vb|
       vb.memory = "4096"
       vb.cpus = "1"
