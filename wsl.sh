@@ -25,3 +25,11 @@ echo "export LS_COLORS" >> ~/.zshrc
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
 
 # https://github.com/sakai135/wsl-vpnkit
+wsl --import wsl-vpnkit $env:USERPROFILE\wsl-vpnkit wsl-vpnkit.tar.gz --version 2
+wsl -d wsl-vpnkit
+wsl.exe -d wsl-vpnkit service wsl-vpnkit start
+
+# completion
+source <(oc completion zsh | sed -e 's/compdef _kubectl kubectl/compdef _oc oc/' )
+source <(kubectl completion zsh
+source <(helm completion zsh))
