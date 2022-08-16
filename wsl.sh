@@ -33,3 +33,20 @@ wsl.exe -d wsl-vpnkit service wsl-vpnkit start
 source <(oc completion zsh | sed -e 's/compdef _kubectl kubectl/compdef _oc oc/' )
 source <(kubectl completion zsh
 source <(helm completion zsh))
+
+# избавимся от всех предыдущих установок Docker
+sudo apt-get remove docker docker-engine docker.io containerd runc
+# Обновляем список пакетов
+sudo apt-get update
+# Устанавливаем необходимые пакеты, которые позволяют apt получить доступ по HTTPS
+sudo apt-get install apt-transport-https ca-certificates curl gnupg2 software-properties-common
+# Добавляем в свою систему ключ GPG официального репозитория Docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+#Добавляем репозиторий Docker в список пакетов:
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+# Обновляем данные о пакетах с учетом пакетов Docker из вновь добавленного репозитория
+sudo apt-get update
+# список доступных версий можно посмотреть так
+apt list -a docker-ce
+# устанавливаем Docker
+sudo apt-get install docker-ce
