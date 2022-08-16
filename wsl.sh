@@ -50,3 +50,4 @@ sudo apt-get update
 apt list -a docker-ce
 # устанавливаем Docker
 sudo apt-get install docker-ce
+sudo service docker start
