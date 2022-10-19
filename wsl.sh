@@ -36,7 +36,7 @@ source <(helm completion zsh))
 
 # alias
 alias ggm="git commit -am "
-alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm chenzj/dfimage"
+alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpine/dfimage"
 alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive"
 
 # избавимся от всех предыдущих установок Docker
