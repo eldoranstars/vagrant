@@ -44,5 +44,5 @@ alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wa
 
 # completion
 source <(oc completion zsh | sed -e 's/compdef _kubectl kubectl/compdef _oc oc/' )
-source <(kubectl completion zsh
-source <(helm completion zsh))
+source <(kubectl completion zsh)
+source <(helm completion zsh)
