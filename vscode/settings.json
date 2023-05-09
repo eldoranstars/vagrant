@@ -1,0 +1,43 @@
+{
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.renderWhitespace": "none",
+    "terminal.integrated.fontFamily": "FiraCode NF",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "Ubuntu (WSL)": {
+            "path": "C:\\Windows\\System32\\wsl.exe",
+            "args": [
+                "-d",
+                "Ubuntu"
+            ]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "settingsSync.ignoredSettings": [
+    
+    ],
+    "gitlens.hovers.enabled": false,
+    "workbench.startupEditor": "none",
+    "window.zoomLevel": -1,
+    "workbench.editor.enablePreview": false,
+    "editor.minimap.enabled": false,
+    "editor.fontLigatures": false,
+}
