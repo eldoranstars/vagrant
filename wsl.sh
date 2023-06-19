@@ -1,6 +1,4 @@
-#/bin/bash
 # https://docs.microsoft.com/en-us/windows/wsl/install
-# https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions
 # indent-rainbow - позволяет видеть tab и пробелы
 # material-icon-theme - меняет значки в explorer на более читаемые
 # gitlens - удобная штука для работы с git
@@ -30,6 +28,7 @@ echo "export PATH=$PATH:$HOME/.dotnet/tools" >> ~/.zshrc
 dotnet tool install -g git-credential-manager
 git-credential-manager configure
 git config --global credential.credentialStore cache
+git config --global credential.cacheOptions "--timeout 3600"
 
 # https://docs.microsoft.com/ru-ru/windows/wsl/tutorials/wsl-git#git-credential-manager-setup
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
