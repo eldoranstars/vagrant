@@ -33,6 +33,8 @@ git config --global credential.cacheOptions "--timeout 3600"
 
 # https://docs.microsoft.com/ru-ru/windows/wsl/tutorials/wsl-git#git-credential-manager-setup
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
+git config --global user.name "Igor.Dorozhkin"
+git config --global user.email "Igor.Dorozhkin@nedra.digital"
 
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -

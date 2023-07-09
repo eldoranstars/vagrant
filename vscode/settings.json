@@ -6,7 +6,7 @@
     "editor.minimap.enabled": false,
     "editor.fontLigatures": false,
     "editor.renderWhitespace": "none",
-    "terminal.integrated.fontFamily": "FiraCode NF",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
     "terminal.integrated.defaultProfile.linux": "zsh",
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "gitlens.hovers.enabled": false,
