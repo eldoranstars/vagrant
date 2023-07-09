@@ -16,6 +16,7 @@ sudo apt install zsh -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' ~/.zshrc
+sed -i 's/res+=" ${clean}="//g' ~/.p10k.zsh # remove VCS_STATUS_REMOTE_BRANCH
 SOURCE_NUMBER=$(cat ~/.zshrc | awk '/source \$ZSH/{print NR}')
 DECREASE_NUMBER=1
 LS_NUMBER=$(($SOURCE_NUMBER-$DECREASE_NUMBER))
