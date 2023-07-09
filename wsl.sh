@@ -42,6 +42,7 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt list -a docker-ce
 sudo apt install docker-ce
 sudo service docker start
+sudo usermod -aG docker $USER
 
 # alias
 alias ggm="git commit -am "
