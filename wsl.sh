@@ -33,7 +33,7 @@ git config --global credential.credentialStore cache
 git config --global credential.cacheOptions "--timeout 3600"
 
 # https://docs.microsoft.com/ru-ru/windows/wsl/tutorials/wsl-git#git-credential-manager-setup
-git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
 git config --global user.name "Igor.Dorozhkin"
 git config --global user.email "Igor.Dorozhkin@nedra.digital"
 
