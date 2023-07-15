@@ -1,4 +1,5 @@
 # https://docs.microsoft.com/en-us/windows/wsl/install
+# powercfg.exe -attributes sub_processor perfboostmode -attrib_hide
 # indent-rainbow - позволяет видеть tab и пробелы
 # material-icon-theme - меняет значки в explorer на более читаемые
 # gitlens - удобная штука для работы с git
