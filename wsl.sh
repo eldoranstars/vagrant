@@ -3,6 +3,9 @@
 # indent-rainbow - позволяет видеть tab и пробелы
 # material-icon-theme - меняет значки в explorer на более читаемые
 # gitlens - удобная штука для работы с git
+# How can I remove Windows Path from Ubuntu Path
+# [interop]
+# appendWindowsPath=false
 
 # https://github.com/ohmybash/oh-my-bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
