@@ -1,11 +1,13 @@
+powercfg.exe -attributes sub_processor perfboostmode -attrib_hide
 # https://docs.microsoft.com/en-us/windows/wsl/install
-# powercfg.exe -attributes sub_processor perfboostmode -attrib_hide
+echo "[interop]" > /etc/wsl.conf
+echo "appendWindowsPath=false" >> /etc/wsl.conf
+echo "[boot]" >> /etc/wsl.conf
+echo "command = service docker start" >> /etc/wsl.conf
+
 # indent-rainbow - позволяет видеть tab и пробелы
 # material-icon-theme - меняет значки в explorer на более читаемые
 # gitlens - удобная штука для работы с git
-# How can I remove Windows Path from Ubuntu Path
-# [interop]
-# appendWindowsPath=false
 
 # https://github.com/ohmybash/oh-my-bash
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
