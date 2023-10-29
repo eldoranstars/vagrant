@@ -59,3 +59,6 @@ alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wa
 source <(oc completion zsh | sed -e 's/compdef _kubectl kubectl/compdef _oc oc/' )
 source <(kubectl completion zsh)
 source <(helm completion zsh)
+
+# https://github.com/microsoft/WSL/issues/8695#issuecomment-1207228108
+optimize-vhd -mode full -path C:\Users\AngryBear\AppData\Local\Packages\ext4.vhdx
