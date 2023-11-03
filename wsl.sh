@@ -61,4 +61,4 @@ source <(kubectl completion zsh)
 source <(helm completion zsh)
 
 # https://github.com/microsoft/WSL/issues/8695#issuecomment-1207228108
-optimize-vhd -mode full -path C:\Users\AngryBear\AppData\Local\Packages\ext4.vhdx
+optimize-vhd -mode full -path C:\Users\AngryBear\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows\LocalState\ext4.vhdx
