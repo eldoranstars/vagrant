@@ -43,7 +43,7 @@ git config --global credential.credentialStore cache
 git config --global credential.cacheOptions "--timeout 3600"
 
 # https://docs.microsoft.com/ru-ru/windows/wsl/tutorials/wsl-git#git-credential-manager-setup
-git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
 git config --global user.name "Igor.Dorozhkin"
 git config --global user.email "Igor.Dorozhkin@nedra.digital"
 
@@ -64,6 +64,3 @@ alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wa
 source <(oc completion zsh | sed -e 's/compdef _kubectl kubectl/compdef _oc oc/' )
 source <(kubectl completion zsh)
 source <(helm completion zsh)
-
-# https://github.com/microsoft/WSL/issues/8695#issuecomment-1207228108
-optimize-vhd -mode full -path C:\Users\AngryBear\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows\LocalState\ext4.vhdx
