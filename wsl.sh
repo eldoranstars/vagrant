@@ -11,7 +11,7 @@ systemd=true
 [interop]
 appendWindowsPath=false
 [automount]
-options = "umask=013"
+options = "umask=022"
 EOF
 
 # https://github.com/ohmybash/oh-my-bash
