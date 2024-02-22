@@ -27,6 +27,7 @@ sudo apt install zsh -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' ~/.zshrc
+sed -i 's/plugins=(git)/plugins=(git docker oc helm kubectl)/g' ~/.zshrc
 sed -i 's/res+=" ${clean}="//g' ~/.p10k.zsh # remove VCS_STATUS_REMOTE_BRANCH
 
 # https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-2004
