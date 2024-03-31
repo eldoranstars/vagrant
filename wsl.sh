@@ -46,17 +46,10 @@ git config --global user.email "Igor.Dorozhkin@nedra.digital"
 # https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-sudo apt list -a docker-ce
 sudo apt install docker-ce
-sudo service docker start
 sudo usermod -aG docker $USER
 
 # alias
 alias ggm="git commit -am "
 alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpine/dfimage"
 alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive"
-
-# completion
-source <(oc completion zsh | sed -e 's/compdef _kubectl kubectl/compdef _oc oc/' )
-source <(kubectl completion zsh)
-source <(helm completion zsh)
