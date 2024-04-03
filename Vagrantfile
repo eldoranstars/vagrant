@@ -58,6 +58,7 @@ Vagrant.configure("2") do |config|
     ubuntu.vm.hostname = "ubuntu"
     ubuntu.vm.network "public_network", ip: "192.168.1.70", bridge: [
       "Intel(R) Ethernet Connection (12) I219-V",
+      "Realtek Gaming 2.5GbE Family Controller",
       "Realtek Gaming GbE Family Controller",
       "Realtek PCIe GbE Family Controller",
     ]
