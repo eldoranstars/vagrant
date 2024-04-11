@@ -1,7 +1,10 @@
 # indent-rainbow - позволяет видеть tab и пробелы
 # material-icon-theme - меняет значки в explorer на более читаемые
 # gitlens - удобная штука для работы с git
-# powercfg.exe -attributes sub_processor perfboostmode -attrib_hide
+# powercfg -attributes SUB_PROCESSOR PERFBOOSTMODE -ATTRIB_HIDE
+# powercfg -attributes 54533251-82be-4824-96c1-47b60b740d00 be337238-0d82-4146-a960-4f3749d470c7 -ATTRIB_HIDE
+# powercfg -attributes 54533251-82be-4824-96c1-47b60b740d00 893dee8e-2bef-41e0-89c6-b55d0929964c -ATTRIB_HIDE
+# powercfg -attributes 54533251-82be-4824-96c1-47b60b740d00 bc5038f7-23e0-4960-96da-33abaf5935ec -ATTRIB_HIDE
 
 # https://docs.microsoft.com/en-us/windows/wsl/install
 # https://learn.microsoft.com/en-us/windows/wsl/wsl-config
@@ -28,7 +31,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/g' ~/.zshrc
 sed -i 's/plugins=(git)/plugins=(git docker oc helm kubectl)/g' ~/.zshrc
-sed -i 's/res+=" ${clean}="//g' ~/.p10k.zsh # remove VCS_STATUS_REMOTE_BRANCH
 
 # https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-2004
 echo "export PATH=$PATH:$HOME/.dotnet/tools" >> ~/.zshrc
@@ -48,6 +50,10 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt install docker-ce
 sudo usermod -aG docker $USER
+
+# https://docs.ansible.com/ansible/latest/os_guide/windows_faq.html
+sudo apt-get install python3-pip git libffi-dev libssl-dev -y
+pip install --user ansible pywinrm
 
 # alias
 alias ggm="git commit -am "
