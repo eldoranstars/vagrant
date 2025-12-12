@@ -1,10 +1,11 @@
 # indent-rainbow - позволяет видеть tab и пробелы
 # material-icon-theme - меняет значки в explorer на более читаемые
 # gitlens - удобная штука для работы с git
-# powercfg -attributes SUB_PROCESSOR PERFBOOSTMODE -ATTRIB_HIDE
-# powercfg -attributes 54533251-82be-4824-96c1-47b60b740d00 be337238-0d82-4146-a960-4f3749d470c7 -ATTRIB_HIDE
-# powercfg -attributes 54533251-82be-4824-96c1-47b60b740d00 893dee8e-2bef-41e0-89c6-b55d0929964c -ATTRIB_HIDE
-# powercfg -attributes 54533251-82be-4824-96c1-47b60b740d00 bc5038f7-23e0-4960-96da-33abaf5935ec -ATTRIB_HIDE
+powercfg -attributes SUB_PROCESSOR PERFBOOSTMODE -ATTRIB_HIDE
+powercfg -attributes 54533251-82be-4824-96c1-47b60b740d00 be337238-0d82-4146-a960-4f3749d470c7 -ATTRIB_HIDE
+powercfg -attributes 54533251-82be-4824-96c1-47b60b740d00 893dee8e-2bef-41e0-89c6-b55d0929964c -ATTRIB_HIDE
+powercfg -attributes 54533251-82be-4824-96c1-47b60b740d00 bc5038f7-23e0-4960-96da-33abaf5935ec -ATTRIB_HIDE
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\54533251-82be-4824-96c1-47b60b740d00\be337238-0d82-4146-a960-4f3749d470c7
 
 # https://docs.microsoft.com/en-us/windows/wsl/install
 # https://learn.microsoft.com/en-us/windows/wsl/wsl-config
@@ -55,7 +56,28 @@ sudo usermod -aG docker $USER
 sudo apt-get install python3-pip git libffi-dev libssl-dev -y
 pip install --user ansible pywinrm
 
-# alias
+# zshrc
 alias ggm="git commit -am "
 alias dfimage="docker run -v /var/run/docker.sock:/var/run/docker.sock --rm alpine/dfimage"
 alias dive="docker run -ti --rm  -v /var/run/docker.sock:/var/run/docker.sock wagoodman/dive"
+export BUILDKIT_PROGRESS=plain
+export PATH="$PATH:/home/user/.local/bin"
+
+# python
+sudo add-apt-repository ppa:deadsnakes/ppa -y
+sudo apt update
+sudo apt install python3.8 python3.11 -y
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.12 3
+sudo apt install python3.8-pip python3.11-pip python3.12-pip -y
+curl -sS https://bootstrap.pypa.io/pip/3.8/get-pip.py -o get-pip38.py
+curl -sS https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+sudo apt install python3.8-distutils -y
+python3.8 get-pip38.py
+python3.11 get-pip.py
+sudo apt install python3-pip -y
+python3.8 -m pip install --upgrade pip setuptools wheel
+python3.11 -m pip install --upgrade pip setuptools wheel
+python3.12 -m pip install --upgrade pip setuptools wheel --break-system-packages
+curl -sSL https://install.python-poetry.org | python3 -
